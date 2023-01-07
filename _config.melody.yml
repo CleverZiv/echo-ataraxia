@@ -216,20 +216,20 @@ disqus:
   # enable: false
   # uid:
 
-  # gitment
-  # enable: false
-  # owner:
-  # repo:
-  # client_id:
-  # client_secret:
-
-gitalk:
+gitment:
   enable: true
+  owner: CleverZiv
+  repo: blog_comment
   client_id: a8f34ed60e25aa11b1e5
   client_secret: a4b91098bbe5cb4a82c94bdc88f014fb38a17937
-  repo: echo-ataraxia
-  owner: CleverZiv
-  admin: CleverZiv
+
+# gitalk:
+  # enable: true
+  # client_id: a8f34ed60e25aa11b1e5
+  # client_secret: a4b91098bbe5cb4a82c94bdc88f014fb38a17937
+  # repo: echo-ataraxia
+  # owner: CleverZiv
+  # admin: CleverZiv
 
   # valine comment system. https://valine.js.org
   # valine:
