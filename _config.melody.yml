@@ -219,9 +219,9 @@ disqus:
 gitment:
   enable: true
   owner: CleverZiv
-  repo: blog_comment
-  client_id: a8f34ed60e25aa11b1e5
-  client_secret: a4b91098bbe5cb4a82c94bdc88f014fb38a17937
+  repo: echo-ataraxia
+  client_id: 4dab2137d30808c86b3f
+  client_secret: ba612fd2613f3ef69385b8a4e6142c05e9c0c1e8
 
 # gitalk:
   # enable: true
