@@ -1,9 +1,9 @@
 ---
 title: Go语言之基本语法篇
 tags:
-  - 秋招 
+  - Go 
 categories:
-  - 生活
+  - Go
 date: 2018-10-27
 ---
 # 一、变量定义
