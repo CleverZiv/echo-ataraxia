@@ -216,12 +216,12 @@ disqus:
   # enable: false
   # uid:
 
-gitment:
-  enable: true
-  owner: CleverZiv
-  repo: echo-ataraxia
-  client_id: 4dab2137d30808c86b3f
-  client_secret: ba612fd2613f3ef69385b8a4e6142c05e9c0c1e8
+# gitment:
+#  enable: true
+#  owner: CleverZiv
+#  repo: echo-ataraxia
+#  client_id: 4dab2137d30808c86b3f
+#  client_secret: ba612fd2613f3ef69385b8a4e6142c05e9c0c1e8
 
 # gitalk:
   # enable: true
@@ -232,18 +232,18 @@ gitment:
   # admin: CleverZiv
 
   # valine comment system. https://valine.js.org
-  # valine:
-  #   enable: false # if you want use valine,please set this value is true
-  #   appId:  # leancloud application app id
-  #   appKey:  # leancloud application app key
-  #   notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
-  #   verify: false # valine verify code (true/false)
-  #   recordip: false # whether record commentor's ip (true/false)
-  #   pageSize: 10 # comment list page size
-  #   avatar: mm # gravatar style https://valine.js.org/#/avatar
-  #   lang: zh-cn # i18n: zh-cn/en
-  #   placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
-  #   guest_info: nick,mail,link #valine comment header inf
+valine:
+  enable: true # if you want use valine,please set this value is true
+  appId:  ZrGiExMywsN3nNMThQ4XP1k7-gzGzoHsz # leancloud application app id
+  appKey:  LuNdV3sPygk0Mbqwooeo9RTm # leancloud application app key
+  # notify: false # valine mail notify (true/false) https://github.com/xCss/Valine/wiki
+  # verify: false # valine verify code (true/false)
+  # recordip: false # whether record commentor's ip (true/false)
+  pageSize: 10 # comment list page size
+  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
+  lang: zh-cn # i18n: zh-cn/en
+  placeholder: welcome to communicate # valine comment input placeholder(like: Please leave your footprints )
+  guest_info: nick,mail,link #valine comment header inf
 
   # vssue:
   # enable: false # Set to true to enable
