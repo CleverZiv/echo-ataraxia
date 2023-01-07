@@ -227,7 +227,7 @@ gitalk:
   enable: true
   client_id: a8f34ed60e25aa11b1e5
   client_secret: a4b91098bbe5cb4a82c94bdc88f014fb38a17937
-  repo: https://github.com/CleverZiv/blog_comment
+  repo: blog_comment
   owner: CleverZiv
   admin: CleverZiv
 
