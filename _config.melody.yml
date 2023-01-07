@@ -4,14 +4,14 @@
 # ---------------
 theme_color:
    enable: true
-   main: "#FFE1FF"
-   paginator: "#00C4B6"
-   button_hover: "#FF7242"
-   text_selection: "#00C4B6"
-   link_color: "#858585"
-   hr_color: "#A4D8FA"
-   tag_start_color: "#A4D8FA"
-   tag_end_color: "#1B9EF3"
+   main: "#CCFFCC"
+   paginator: "#66CCCC"
+   button_hover: "#CCFFFF"
+   text_selection: "#CCCCFF"
+   link_color: "#99CCFF"
+   hr_color: "#6699CC"
+   tag_start_color: "#66CCFF"
+   tag_end_color: "#66CCFF"
    header_text_color: "#EEEEEE"
    footer_text_color: "#EEEEEE"
 
