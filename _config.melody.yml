@@ -4,16 +4,16 @@
 # ---------------
 theme_color:
    enable: true
-   main: "#EEEEEE"
-   paginator: "#EEEEEE"
-   button_hover: "#EEEEEE"
-   text_selection: "#EEEEEE"
-   link_color: "#EEEEEE"
-   hr_color: "#EEEEEE"
-   tag_start_color: "#EEEEEE"
-   tag_end_color: "#EEEEEE"
-   header_text_color: "#EEEEEE"
-   footer_text_color: "#EEEEEE"
+   main: "#99CCCC"
+   paginator: "#66CCCC"
+   button_hover: "#CCFFFF"
+   text_selection: "#CCCCFF"
+   link_color: "#99CCFF"
+   hr_color: "#6699CC"
+   tag_start_color: "#66CCFF"
+   tag_end_color: "#66CCFF"
+   header_text_color: "#333333"
+   footer_text_color: "#333333"
 
 # Main menu navigation
 menu:
@@ -52,7 +52,7 @@ code_word_wrap: true
 # And you need to add the `fa` or `fab` prefix by your self.
 # ---------------
 social:
-github fa: https://github.com/CleverZiv
+  github fa: https://github.com/CleverZiv
 #icon_name fab: url
 
 # Algolia search
@@ -132,7 +132,7 @@ cdn:
 
 # Post info settings
 # ---------------
-avatar:
+avatar: https://myblog-1258060977.cos.ap-beijing.myqcloud.com/%E7%8B%97%E7%8B%97%E5%A4%B4%E5%83%8F.jpeg
 
 top_img: true # false or url of img
 

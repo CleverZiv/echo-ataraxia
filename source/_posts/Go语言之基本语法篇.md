@@ -42,6 +42,8 @@ func variableZeroValue(){
 	fmt.Printf("%d  %q\n",a,s)
 }
 
+<!-- more -->
+
 /**
 定义有初始值的变量
  */
@@ -389,4 +391,3 @@ func main() {
      	*a, *b = *b, *a
   }
 ```
-<!-- more -->
