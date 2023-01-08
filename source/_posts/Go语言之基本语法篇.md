@@ -42,8 +42,6 @@ func variableZeroValue(){
 	fmt.Printf("%d  %q\n",a,s)
 }
 
-<!-- more -->
-
 /**
 定义有初始值的变量
  */
@@ -94,6 +92,8 @@ func main() {
 	triangle()
 }
 ```
+
+<!-- more -->
 
 # 二、內建变量类型
 
