@@ -3,18 +3,21 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Echo-Ataraxia's Blog
+title: Echo-Ataraxia
 subtitle: 日拱一卒
-description: 大厂程序员|BUPT|小镇青年
+description: BUPT|大厂工程师|小镇青年
 keywords:
 author: Echo-Ataraxia
-language: zh-Hans
+language: en
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://example.com
-permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/
+abbrlink:
+  alg: crc32
+  rep: hex
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
