@@ -1,11 +1,12 @@
 ---
 title: 精读RocketMQ源码系列（0）-开篇
 tags:
-- RocketMQ
-- 源码
+  - RocketMQ
+  - 源码
 categories:
-- RocketMQ 
-date: 2021-07-07
+  - RocketMQ
+abbrlink: 92d0af0f
+date: 2021-07-07 00:00:00
 ---
 # 一、搭建源码阅读环境
 
