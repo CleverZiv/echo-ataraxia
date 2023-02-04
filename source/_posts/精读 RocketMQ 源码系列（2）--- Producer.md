@@ -20,6 +20,8 @@ date: 2021-07-12 00:00:00
 
 需要强调的是，本文不会详细讲和 Producer、消息相关的一些概念，对这一块不太熟悉的同学可以在 [精读 RocketMQ 源码系列（0）---开篇词](https://juejin.cn/post/6982206285462634510) 这篇中找到官方的中文文档，进行了解。
 
+<!-- more -->
+
 # 二、启动流程
 
 RocketMQ 中生产者的核心类是 `DefaultMQProducer`，启动流程的源码入口是 `DefaultMQProducer#start()`。流程图如下：
