@@ -327,6 +327,4 @@ indexFile 也是一个索引文件，不过它的定位是提供根据msgId或�
 <https://github.com/DillonDong/notes/blob/master/RocketMQ/RocketMQ-03.md>
 
 **最后**
-
--   如果觉得有收获，三连支持下；
--   文章若有错误，欢迎评论留言指出，也欢迎转载，转载请注明出处；
+-   文章若有错误，欢迎评论留言指出，也欢迎转载，转载请注明出处
