@@ -1,13 +1,13 @@
 ---
-title: 精读RocketMQ源码系列（0）-开篇
+title: 精读RocketMQ源码系列（3）-Broker
 tags:
   - RocketMQ
   - 源码
 categories:
   - RocketMQ
-date: 2021-07-07 00:00:00
+date: 2021-07-13 00:00:00
 ---
-## 一、前言
+# 一、前言
 
 开始之前，我们先看一张来自 RocketMQ 官方文档中的消息数据流图：
 
@@ -32,11 +32,11 @@ date: 2021-07-07 00:00:00
 1.  为什么消息存储到了 CommitLog 之后还需要分发到 ConsumerQueue 和 IndexFile 文件中
 2.  CommitLog、ConsumerQueue、IndexFile 分别存储了什么消息的什么内容，作用是什么？
 
-## 二、消息接收和存储流程
+# 二、消息接收和存储流程
 
 看了很多资料发现都是直接从 Broker 的存储的时候就开始讲了，没有提消息是如何接收的。为了保持逻辑的连贯性，我还是从消息接收说起。
 
-### 2.1 消息接收
+## 2.1 消息接收
 
 我们知道 RocketMQ 底层是使用 netty 进行通信的，在[精读 RocketMQ 源码系列（1）--- NameServer](https://juejin.cn/post/6983267530181705742) 的 `3.1.1` 中讲 Broker 启动流程的时候，提到过 Broker 启动时还会启动 netty 客户端，源码位置：`BrokerController#start`
 
@@ -105,7 +105,7 @@ processMessageReceived(ctx, msg);
 ![msg_receive.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5feadae35af54b50b47e0484a752ec2f~tplv-k3u1fbpfcp-watermark.image)
 
 好了，消息接收的部分就结束了，下一节我们开始关注本篇的重头戏：消息存储！
-### 2.2 消息存储
+## 2.2 消息存储
 
 消息存储我这里选的入口是 `DefaultMessageStore#putMessage`，`DefaultMessageStore#asyncPutMessage` 与之类似
 
@@ -192,7 +192,7 @@ processMessageReceived(ctx, msg);
 ![image-20210721005237968.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/7a9c220119d14f8e988f92b846571a77~tplv-k3u1fbpfcp-watermark.image)
 
 但为了消费者更好地消费消息，还需要将 CommitLog 分发到 ConsumeQueue 中；为了实现根据某些关键字查询的功能那个，又需要将 CommitLog 分发到 IndexFile 中。
-### 2.3 indexFile 和 ConsumeQueue 是如何更新的
+## 2.3 indexFile 和 ConsumeQueue 是如何更新的
 
 启动 broker 的时候会启动 `DefaultMessageStore`，在其`start`方法中又启动了存储相关的服务，其中就包括了将 CommitLog 分发到 indexFile 和 comsumeQueue 的服务
 
@@ -222,7 +222,7 @@ this.reputMessageService.start();
 
 最后我们来分别看一下这两个文件的结构。
 
-#### ConsumeQueue
+### ConsumeQueue
 
 ConsumeQueue 在逻辑上与生产者发送时 MessageQueue 是一一对应的。如果有4个消息写队列，那么 CommitLog 也会被分发到4个相应的 ConsumeQueue（同一个consumeQueue有多个文件，因为单独一个文件的限制是30万*20B）。
 
@@ -247,7 +247,7 @@ ConsumeQueue 由30万个固定大小为20byte的数据块组成，数据块的�
 
 消费者消费时，只要知道自己要消费的是第几条消息（称之为消费位点），就可以通过消费位点对30万取余的方式，定位到指定的 consumeQueue文件的指定数据块。如果超过了30万，那就是下一个文件的数据块。例如，我需要读取第31万的消息，我可以计算出这条消息的索引内容在第2个consumequeue的第1万个数据块。然后读取这个数据块的内容，再去commitLog获取真正的消息。
 
-#### IndexFile
+### IndexFile
 
 indexFile 也是一个索引文件，不过它的定位是提供根据msgId或生产者指定的消息key作为索引key。整个indexFile的文件物理存储结构如下：
 
@@ -306,7 +306,7 @@ indexFile 也是一个索引文件，不过它的定位是提供根据msgId或�
 
 > msgId生成规则: 前机器IP+进程号+MessageClientIDSetter.class.getClassLoader()的hashCode值+消息生产时间与broker启动时间的差值+broker启动后从0开始单调自增的int值，前面三项很明显可能重复，后面两项一个是时间差，一个是重启归零，也可能重复
 
-## 三、小结
+# 三、小结
 
 到这里我们小结下，本篇文章讲了哪些东西：
 
@@ -318,7 +318,7 @@ indexFile 也是一个索引文件，不过它的定位是提供根据msgId或�
 1.  ConsumeQueue 可以认为是逻辑分区，类似于 Kafka 中的 partition，通过将 CommitLog 分为多个 ConsumeQueue，使得同一个 Topic 的消息可以被多个消费者同时消费，增加吞吐量。同时也能实现单个 ConsumeQueue 的消息的顺序性，满足一些业务场景。
 1.  分发到 IndexFile，是因为在客户端（生产者和消费者）和admin接口提供了根据 key 查询消息的实现。为了方便用户查询具体某条消息。
 
-## 四、参考文档
+# 四、参考文档
 
 <https://blog.csdn.net/wb_snail/article/details/106236898>
 
