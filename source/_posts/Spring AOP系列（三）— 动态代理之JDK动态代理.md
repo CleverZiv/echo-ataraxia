@@ -12,6 +12,9 @@ JDK动态代理核心是两个类：`InvocationHandler`和 `Proxy`
 为便于理解，首先看一个例子：
 希望实现这样一个功能：使用 `UserService` 时，只需关注自己的核心业务逻辑的实现，对于日志功能的打印，由系统的公共服务完成。
 首先定义一个业务类的接口：`UserService.java`
+
+<!-- more -->
+
 ```java
 package com.proxy;
 /**

@@ -10,6 +10,9 @@ date: 2021-07-16 00:00:00
 接上一篇[Spring AOP系列（一）— 代理模式](https://juejin.cn/post/6985004955149008904)，本篇来聊聊动态代理。
 ## 动态代理与静态代理的区别
 要想了解动态代理与静态代理的区别，需要有两个前置知识点：java程序是如何执行的以及类加载机制。
+
+<!-- more -->
+
 ### java程序执行过程
 ![java程序执行过程](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/467e3fcce6be49f2ad62790ba273499e~tplv-k3u1fbpfcp-zoom-1.image)
 1. 将java源码(.java文件)通过编译器(javac.exe)编译成JVM文件(.class文件)。
